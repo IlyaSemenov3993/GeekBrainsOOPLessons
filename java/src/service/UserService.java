@@ -5,7 +5,7 @@ import dto.User;
 
 import java.util.List;
 
-public interface DataService<U extends User> {
+public interface UserService<U extends User> {
 
     U createUser(U user);
 
@@ -13,7 +13,9 @@ public interface DataService<U extends User> {
 
     U findByLastName(String lastName);
 
-    void sortUsers(List<U> users);
+    boolean deleteByLastName(String lastName);
+
+    boolean deleteByAgeAndGroupNumber(int age, int groupNumber);
 
     void sortUsersByName(List<U> users);
 

@@ -7,7 +7,7 @@ import repository.TeacherRepository;
 import java.util.Collections;
 import java.util.List;
 
-public class TeacherService implements DataService<Teacher> {
+public class TeacherService implements UserService<Teacher> {
     private final TeacherRepository teacherRepository;
 
     public TeacherService(TeacherRepository teacherRepository) {
@@ -27,6 +27,16 @@ public class TeacherService implements DataService<Teacher> {
     @Override
     public Teacher findByLastName(String lastName) {
         return teacherRepository.findByLastName(lastName);
+    }
+
+    @Override
+    public boolean deleteByLastName(String lastName) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteByAgeAndGroupNumber(int age, int groupNumber) {
+        return false;
     }
 
     @Override

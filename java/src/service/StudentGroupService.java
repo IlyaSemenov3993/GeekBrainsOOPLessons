@@ -9,7 +9,7 @@ public interface StudentGroupService {
 
     StudentGroup getGroup();
 
-    void removeStudent(String firstName, String lastName);
+    void removeStudent(String fio);
 
     void sortStudents(StudentGroup studentGroup);
 }

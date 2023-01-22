@@ -1,13 +1,21 @@
 package repository;
 
+import db.StudentTable;
 import dto.Student;
 
-public class StudentRepository implements UserRepository<Student,Integer>{
+import java.util.Collection;
 
+public class StudentRepository implements UserRepository<Student, Integer> {
+
+    private final StudentTable studentTable;
+
+    public StudentRepository() {
+        this.studentTable = new StudentTable();
+    }
 
     @Override
     public Student save(Student entity) {
-        return null;
+        return studentTable.save(entity);
     }
 
     @Override
@@ -18,5 +26,20 @@ public class StudentRepository implements UserRepository<Student,Integer>{
     @Override
     public Student findByLastName(String LastName) {
         return null;
+    }
+
+    @Override
+    public boolean deleteByLastName(String lastName) {
+        return studentTable.deleteByFio(lastName);
+    }
+
+    @Override
+    public boolean deleteByAgeAndGroupNumber(int age, int groupNumber) {
+        return studentTable.deleteByFio(age, groupNumber);
+    }
+
+    @Override
+    public Collection<Student> findAll() {
+        return studentTable.getElements();
     }
 }

@@ -7,7 +7,7 @@ import repository.StudentRepository;
 import java.util.Collections;
 import java.util.List;
 
-public class StudentService implements DataService<Student> {
+public class StudentService implements UserService<Student> {
 
     private final StudentRepository studentRepository;
 
@@ -29,6 +29,16 @@ public class StudentService implements DataService<Student> {
     @Override
     public Student findByLastName(String lastName) {
         return studentRepository.findByLastName(lastName);
+    }
+
+    @Override
+    public boolean deleteByLastName(String lastName) {
+        return studentRepository.deleteByLastName(lastName);
+    }
+
+    @Override
+    public boolean deleteByAgeAndGroupNumber(int age, int groupNumber) {
+        return studentRepository.deleteByAgeAndGroupNumber(age, groupNumber);
     }
 
     @Override

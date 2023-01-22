@@ -28,12 +28,12 @@ public class StudentGroupServiceImpl implements StudentGroupService {
     }
 
     @Override
-    public void removeStudent(String firstName, String lastName) {
+    public void removeStudent(String fio) {
         Iterator<Student> students = getStudentsFromTxt().iterator();
 
         while (students.hasNext()) {
             Student student = students.next();
-            if (firstName.equals(student.getFirstName()) && lastName.equals(student.getLastName())) {
+            if (fio.equals(student.getFio())) {
                 students.remove();
             }
         }

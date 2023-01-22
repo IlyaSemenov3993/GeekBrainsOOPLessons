@@ -3,8 +3,8 @@ package dto;
 public class Teacher extends User {
     private String rank;
 
-    public Teacher(String firstName, String lastName, int id, String rank) {
-        super(firstName, lastName, id);
+    public Teacher(String fio, String rank) {
+        super(fio);
         this.rank = rank;
     }
 
