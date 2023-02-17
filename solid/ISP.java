@@ -1,20 +1,18 @@
-import dto.StudentGroup;
-import dto.User;
 
 import java.util.List;
 
-public interface UserService<U extends User> {
+public interface AnimalService<U extends Animal> {
 
-    U createUser(U user);
+    U createAnimal(U animal);
 
     U findById(Integer id);
 
-    U findByLastName(String lastName);
+    U findByName(String name);
 
-    void sortUsers(List<U> users);
+    void sortAnimals(List<U> animals);
 
-    void sortUsersByName(List<U> users);
+    void sortAnimalsByName(List<U> animals);
     
-    StudentGroup findGroup(int groupNumber);
+    AnimalCage findCage(int groupNumber);
 
 }
