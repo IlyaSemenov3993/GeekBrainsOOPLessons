@@ -1,23 +1,23 @@
 import java.util.Comparator;
 
-public class Teacher extends User implements Comparator<Teacher>{
-    private String rank;
+public class Lion extends Animal implements Comparator<Lion>{
+    private int volumeOfGriva;
 
-    public Teacher(String firstName, String lastName, int id, String rank) {
-        super(firstName, lastName, id);
-        this.rank = rank;
+    public Lion(String name, String volumeOfGriva, int age) {
+        super(name, age);
+        this.volumeOfGriva = volumeOfGriva;
     }
 
-    public String getRank() {
-        return rank;
+    public String getVolumeOfGriva() {
+        return volumeOfGriva;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
+    public void setVolumeOfGriva(String volumeOfGriva) {
+        this.volumeOfGriva = volumeOfGriva;
     }
 
     @Override
-    public int compare(Teacher o1, Teacher o2) {
-        return o1.rank.compareTo(o2.rank);
+    public int compare(Lion o1, Lion o2) {
+        return o1.volumeOfGriva.compareTo(o2.volumeOfGriva);
     }
 }
